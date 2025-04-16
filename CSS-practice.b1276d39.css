@@ -24,24 +24,33 @@ a {
 
 .people {
   grid-gap: 40px 30px;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: repeat(2, 200px);
   place-content: center;
   margin: auto;
   display: grid;
 }
 
+@media (width >= 1000px) {
+  .people {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
 .person {
   box-sizing: border-box;
+  background-color: #fff;
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
+  padding: 10px 10px 16px;
   transition: transform 1s;
   display: flex;
 }
 
 .person:hover {
-  background-color: #eee;
   transform: scale(1.2);
+  transform: transform 1s;
+  background-color: #eee;
 }
 
 .person__photo {
@@ -52,20 +61,22 @@ a {
 .person__rank {
   color: #8b0000;
   background-color: #fff;
-  border-radius: 50px;
+  border-radius: 50%;
   justify-content: center;
   align-items: center;
   width: 32px;
   height: 32px;
   display: flex;
   position: absolute;
-  top: 94px;
+  top: 84px;
+  bottom: 84px;
   right: 10px;
 }
 
 .person__image {
   border-radius: 50%;
   width: 100%;
+  transition: all 1s;
   display: flex;
 }
 
@@ -80,5 +91,22 @@ a {
   font-size: 20px;
   font-weight: 700;
   display: block;
+}
+
+.person__extra {
+  text-align: center;
+  visibility: hidden;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.person__extra:hover {
+  visibility: visible;
+}
+
+.person__sport {
+  content: ",";
 }
 /*# sourceMappingURL=CSS-practice.b1276d39.css.map */
